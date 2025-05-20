@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">MyPortfolio</h1>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero">
+            <div class="container">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Showcasing my journey and projects in web development.</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h3>About Me</h3>
+            <div class="about-content">
+                <img src="https://via.placeholder.com/250" alt="Profile Picture" class="profile-pic">
+                <p>Hello! I'm a passionate web developer with a knack for creating elegant and efficient solutions. I specialize in front-end technologies and I'm always eager to learn new things and take on challenging projects. My goal is to build web experiences that are both user-friendly and visually appealing.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h3>My Projects</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200/e0e0e0/333?text=Project+Alpha" alt="Project Alpha">
+                    <h4>Project Alpha</h4>
+                    <p>A brief description of Project Alpha. Focused on modern UI/UX design and responsive layouts.</p>
+                    <a href="#" class="btn-secondary" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200/d0d0d0/333?text=Project+Beta" alt="Project Beta">
+                    <h4>Project Beta</h4>
+                    <p>Description of Project Beta. Utilized cutting-edge JavaScript frameworks for enhanced interactivity.</p>
+                    <a href="#" class="btn-secondary" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200/c0c0c0/333?text=Project+Gamma" alt="Project Gamma">
+                    <h4>Project Gamma</h4>
+                    <p>Project Gamma explored backend integration and API development. Built with scalability in mind.</p>
+                    <a href="#" class="btn-secondary" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h3>Contact Me</h3>
+            <p>Feel free to reach out for collaborations or just to say hi!</p>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+            <p>Designed with a modern touch.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Basic form submission handling (prevents default and logs to console)
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                console.log('Form submitted:');
+                for (let [key, value] of formData.entries()) {
+                    console.log(key + ': ' + value);
+                }
+                alert('Thank you for your message! (This is a demo, data not actually sent)');
+                this.reset(); // Reset form after submission
+            });
+        }
+    </script>
+</body>
+</html>
